@@ -1,0 +1,12 @@
+def truckTour(petrolpumps):
+    n=len(petrolpumps)
+    for i in range(n):
+        currcap=0
+        curridx=i
+        for j in range(n):
+            curr=(i+j)%n
+            currcap+=(petrolpumps[curr][0]-petrolpumps[curr][1])
+            if currcap<0:
+                break
+            if j==n-1:
+                return curridx
